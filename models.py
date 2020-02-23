@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_admin.contrib.sqla import ModelView
 
 db = SQLAlchemy()
 
@@ -10,6 +11,10 @@ class User(db.Model):
     name = db.Column(db.String, nullable=False)
     mail = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
+
+
+class MyUserView(ModelView):
+    column_exclude_list = ['password']
 
 
 class Group(db.Model):
