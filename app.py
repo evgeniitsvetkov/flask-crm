@@ -16,6 +16,7 @@ class DashboardView(AdminIndexView):
         return self.render('admin/admin_dashboard.html')
 
 
+db.init_app(app)
 admin = Admin(app, index_view=DashboardView())
 
 admin.add_view(MyUserView(User, db.session))
@@ -66,7 +67,6 @@ def render_server_error(error):
 
 
 if __name__ == '__main__':
-    db.init_app(app)
     with app.app_context():
         db.create_all()
     app.run()
