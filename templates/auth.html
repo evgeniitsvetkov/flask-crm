@@ -25,18 +25,25 @@
 
           <div class="form-label-group">
             <p class="text-muted">Электропочта</p>
-            <input type="email" id="inputEmail" class="form-control" required autofocus>
+            <input type="email" id="inputEmail" name="mail" class="form-control" required autofocus>
             <label for="inputEmail"></label>
           </div>
           <div class="form-label-group">
             <p class="text-muted">Пароль</p>
-            <input type="password" id="inputPassword" class="form-control" required>
+            <input type="password" id="inputPassword" name="password" class="form-control" required>
             <label for="inputPassword"></label>
           </div>
           <div class="checkbox mb-3"> </div>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         </form>
       </div>
+
+      <div class="col-8 col-lg-4 offset-2 offset-lg-4">
+        <form class="pt-3" action="/logout" method="POST">
+          <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Выйти</button>
+        </form>
+      </div>
+
     </div>
   </main>
 </body>
